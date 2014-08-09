@@ -8,8 +8,9 @@
 
 #import "BookSearchViewController.h"
 #import "BooksTableViewController.h"
+#import "ScanUPCViewController.h"
 
-@interface BookSearchViewController () <UITextFieldDelegate>
+@interface BookSearchViewController () <UITextFieldDelegate, ScanUPCViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
@@ -43,6 +44,7 @@
 #pragma mark - UIViewController
 
 static NSString *SearchBooksSegueIdentifier = @"Search Books";
+static NSString *ScanUPCSegueIdentifier = @"Scan UPC";
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
@@ -64,7 +66,12 @@ static NSString *SearchBooksSegueIdentifier = @"Search Books";
 {
     if ([segue.identifier isEqualToString:SearchBooksSegueIdentifier]) {
         if ([segue.destinationViewController isKindOfClass:[BooksTableViewController class]]) {
-            [self prepareBooksTableViewController:segue.destinationViewController withSearch:self.searchTextField.text];
+            NSString *query = [sender isKindOfClass:[NSString class]] ? sender : self.searchTextField.text;
+            [self prepareBooksTableViewController:segue.destinationViewController withSearch:query];
+        }
+    } else if ([segue.identifier isEqualToString:ScanUPCSegueIdentifier]) {
+        if ([segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
+            [self prepareScanUPCViewController:[((UINavigationController *)segue.destinationViewController).viewControllers firstObject]];
         }
     }
 }
@@ -73,6 +80,11 @@ static NSString *SearchBooksSegueIdentifier = @"Search Books";
 {
     viewController.query = search;
     viewController.title = search;
+}
+
+- (void)prepareScanUPCViewController:(ScanUPCViewController *)viewController
+{
+    viewController.delegate = self;
 }
 
 #pragma mark - UITextFieldDelegate
@@ -87,6 +99,13 @@ static NSString *SearchBooksSegueIdentifier = @"Search Books";
         }
     }
     return YES;
+}
+
+#pragma mark - ScanUPCViewControllerDelegate
+
+-(void)scanUPCViewController:(ScanUPCViewController *)viewController didFinishScanningWithCode:(NSString *)code
+{
+    [self performSegueWithIdentifier:SearchBooksSegueIdentifier sender:code];
 }
 
 @end

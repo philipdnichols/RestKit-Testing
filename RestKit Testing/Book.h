@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSString *descriptionText;
 @property (strong, nonatomic) NSString *categories;
 @property (strong, nonatomic) NSString *thumbnailURL;
+@property (strong, nonatomic) NSData *thumbnail;
 
 @property (strong, nonatomic) NSArray *authorsArray;
 @property (strong, nonatomic) NSArray *categoriesArray;

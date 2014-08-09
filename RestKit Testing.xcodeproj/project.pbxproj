@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6DC3898531574145B335CA7A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 62AC9204DD5F435A80FE52A6 /* libPods.a */; };
+		B135E5B81996C2D10075007D /* ScanUPCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B135E5B71996C2D10075007D /* ScanUPCViewController.m */; };
 		B15E4BB11995343F00EEAC32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15E4BB01995343F00EEAC32 /* Foundation.framework */; };
 		B15E4BB31995343F00EEAC32 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15E4BB21995343F00EEAC32 /* CoreGraphics.framework */; };
 		B15E4BB51995343F00EEAC32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15E4BB41995343F00EEAC32 /* UIKit.framework */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		482F8D4F55F0451BA641B317 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		62AC9204DD5F435A80FE52A6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B135E5B61996C2D10075007D /* ScanUPCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanUPCViewController.h; sourceTree = "<group>"; };
+		B135E5B71996C2D10075007D /* ScanUPCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanUPCViewController.m; sourceTree = "<group>"; };
 		B15E4BAD1995343F00EEAC32 /* RestKit Testing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RestKit Testing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B15E4BB01995343F00EEAC32 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B15E4BB21995343F00EEAC32 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -95,6 +98,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B135E5B91996C3280075007D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B18E1B731995516A00E6401D /* BookCell.h */,
+				B18E1B741995516A00E6401D /* BookCell.m */,
+				B15E4BC21995343F00EEAC32 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		B135E5BA1996C32E0075007D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B135E5B61996C2D10075007D /* ScanUPCViewController.h */,
+				B135E5B71996C2D10075007D /* ScanUPCViewController.m */,
+				B18E1B6D199541D800E6401D /* BookSearchViewController.h */,
+				B18E1B6E199541D800E6401D /* BookSearchViewController.m */,
+				B15E4BE51995349F00EEAC32 /* BooksTableViewController.h */,
+				B15E4BE61995349F00EEAC32 /* BooksTableViewController.m */,
+				B18E1B70199545F300E6401D /* BookDetailViewController.h */,
+				B18E1B71199545F300E6401D /* BookDetailViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		B135E5BB1996C3410075007D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B18E1B6A1995359800E6401D /* Book.h */,
+				B18E1B6B1995359800E6401D /* Book.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		B15E4BA41995343F00EEAC32 = {
 			isa = PBXGroup;
 			children = (
@@ -132,17 +169,9 @@
 			children = (
 				B15E4BBF1995343F00EEAC32 /* AppDelegate.h */,
 				B15E4BC01995343F00EEAC32 /* AppDelegate.m */,
-				B15E4BC21995343F00EEAC32 /* Main.storyboard */,
-				B18E1B6D199541D800E6401D /* BookSearchViewController.h */,
-				B18E1B6E199541D800E6401D /* BookSearchViewController.m */,
-				B15E4BE51995349F00EEAC32 /* BooksTableViewController.h */,
-				B15E4BE61995349F00EEAC32 /* BooksTableViewController.m */,
-				B18E1B70199545F300E6401D /* BookDetailViewController.h */,
-				B18E1B71199545F300E6401D /* BookDetailViewController.m */,
-				B18E1B731995516A00E6401D /* BookCell.h */,
-				B18E1B741995516A00E6401D /* BookCell.m */,
-				B18E1B6A1995359800E6401D /* Book.h */,
-				B18E1B6B1995359800E6401D /* Book.m */,
+				B135E5BB1996C3410075007D /* Model */,
+				B135E5B91996C3280075007D /* View */,
+				B135E5BA1996C32E0075007D /* Controller */,
 				B15E4BC81995343F00EEAC32 /* Images.xcassets */,
 				B15E4BB71995343F00EEAC32 /* Supporting Files */,
 			);
@@ -316,6 +345,7 @@
 				B18E1B72199545F300E6401D /* BookDetailViewController.m in Sources */,
 				B15E4BBD1995343F00EEAC32 /* main.m in Sources */,
 				B18E1B6F199541D800E6401D /* BookSearchViewController.m in Sources */,
+				B135E5B81996C2D10075007D /* ScanUPCViewController.m in Sources */,
 				B15E4BE71995349F00EEAC32 /* BooksTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,6 +18,12 @@
 #define COCOAPODS_VERSION_MINOR_ISO8601DateFormatterValueTransformer 6
 #define COCOAPODS_VERSION_PATCH_ISO8601DateFormatterValueTransformer 0
 
+// MTBBarcodeScanner
+#define COCOAPODS_POD_AVAILABLE_MTBBarcodeScanner
+#define COCOAPODS_VERSION_MAJOR_MTBBarcodeScanner 0
+#define COCOAPODS_VERSION_MINOR_MTBBarcodeScanner 1
+#define COCOAPODS_VERSION_PATCH_MTBBarcodeScanner 6
+
 // RKValueTransformers
 #define COCOAPODS_POD_AVAILABLE_RKValueTransformers
 #define COCOAPODS_VERSION_MAJOR_RKValueTransformers 1

@@ -48,7 +48,7 @@
     self.authorsLabel.text = self.book.authors;
     self.publisherLabel.text = self.book.publisher;
     self.publishedDateLabel.text = self.book.publishedDate;
-    self.pageCountLabel.text = [NSString stringWithFormat:@"%d pages", self.book.pageCount];
+    self.pageCountLabel.text = [NSString stringWithFormat:@"%lu pages", (unsigned long)self.book.pageCount];
     self.descriptionTextView.text = self.book.descriptionText;
     self.categoriesLabel.text = self.book.categories;
     dispatch_queue_t imageQ = dispatch_queue_create("image queue", NULL);

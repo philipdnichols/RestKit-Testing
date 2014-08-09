@@ -116,6 +116,7 @@
     cell.titleLabel.text = book.title;
     cell.authorsLabel.text = book.authors;
     cell.dateLabel.text = book.publishedDate;
+    // TODO there is a better way to do this
     cell.bookImageView.image = nil;
     dispatch_queue_t imageQ = dispatch_queue_create("image queue", NULL);
     dispatch_async(imageQ, ^{

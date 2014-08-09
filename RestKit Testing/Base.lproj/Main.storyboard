@@ -32,6 +32,16 @@
                                     <segue destination="Zsd-xa-bXR" kind="push" identifier="Search Books" id="gAz-Fh-q5X"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAF-xs-XDy">
+                                <rect key="frame" x="20" y="96" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Scan UPC!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="MhG-G2-raG" kind="modal" identifier="Scan UPC" id="kbb-T3-KlE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -43,6 +53,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEj-un-wHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1028" y="6"/>
+        </scene>
+        <!--ScanUPC View Controller - Scan UPC-->
+        <scene sceneID="47x-Eu-ayn">
+            <objects>
+                <viewController id="USb-vV-dTI" customClass="ScanUPCViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uiv-LN-oUs"/>
+                        <viewControllerLayoutGuide type="bottom" id="8P2-q8-sB1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gCi-4k-iZU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Scan UPC" id="kmV-WY-eaC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PVZ-Ea-nMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2006" y="679"/>
         </scene>
         <!--Books Table View Controller-->
         <scene sceneID="xdY-Q2-7LB">
@@ -104,7 +133,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eNP-fN-66D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1461" y="6"/>
+            <point key="canvasLocation" x="1569" y="6"/>
         </scene>
         <!--Book Detail View Controller-->
         <scene sceneID="B1C-Y2-BBl">
@@ -183,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qck-X8-K11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1898" y="6"/>
+            <point key="canvasLocation" x="2006" y="6"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wb9-ht-DHN">
@@ -203,6 +232,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awc-A0-5e9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="502" y="6"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JIO-BH-sQZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MhG-G2-raG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="10g-2Z-nJ1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="USb-vV-dTI" kind="relationship" relationship="rootViewController" id="Bhm-Hz-cYQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d2x-uL-exH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1569" y="679"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
